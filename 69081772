@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monchhichi Doll Shop | Home</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --pink: #d9829b;
+      --dark-pink: #a95d78;
+      --cream: #fff8ef;
+      --soft-cream: #fff1e5;
+      --brown: #6f4b3e;
+      --text: #5d4a43;
+      --white: #ffffff;
+      --line: #efd9cf;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    header {
+      background: rgba(255, 248, 239, 0.97);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(111, 75, 62, 0.06);
+    }
+
+    .navbar {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-mark {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--pink);
+      display: grid;
+      place-items: center;
+      font-size: 25px;
+      border: 3px solid #f3c3cf;
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .logo-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .logo-text {
+      color: var(--brown);
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .logo-text span {
+      color: var(--pink);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 6px;
+    }
+
+    .nav-links li a {
+      color: var(--brown);
+      padding: 9px 13px;
+      border-radius: 20px;
+      font-size: 14px;
+      transition: 0.2s ease;
+    }
+
+    .nav-links li a:hover,
+    .nav-links li a.active {
+      background: var(--pink);
+      color: var(--white);
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+    }
+
+    .menu-toggle span {
+      width: 26px;
+      height: 3px;
+      background: var(--brown);
+      border-radius: 2px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #fff8ef 0%, #f8dbe2 100%);
+      padding: 72px 20px;
+      overflow: hidden;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 55px;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      flex: 1 1 430px;
+    }
+
+    .eyebrow {
+      color: var(--dark-pink);
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      font-size: 13px;
+    }
+
+    .hero-text h1 {
+      font-size: 48px;
+      margin-bottom: 16px;
+      line-height: 1.15;
+      color: var(--brown);
+    }
+
+    .hero-text h1 span {
+      color: var(--pink);
+    }
+
+    .hero-text p {
+      font-size: 17px;
+      color: #765f56;
+      margin-bottom: 26px;
+      max-width: 540px;
+    }
+
+    .hero-image {
+      flex: 1 1 350px;
+      text-align: center;
+    }
+
+    .hero-doll {
+      width: min(390px, 100%);
+      min-height: 420px;
+      margin: auto;
+      border-radius: 45% 45% 35% 35%;
+      background: #f4c8d3;
+      border: 8px solid #fff;
+      box-shadow: 0 18px 40px rgba(111, 75, 62, 0.16);
+      padding: 14px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-photo {
+      width: 100%;
+      max-width: 520px;
+      border-radius: 24px;
+      display: block;
+      object-fit: cover;
+      box-shadow: 0 18px 40px rgba(169, 93, 120, 0.16);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      border-radius: 25px;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      border: none;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--pink);
+      color: var(--white);
+    }
+
+    .btn-outline {
+      background: var(--white);
+      color: var(--dark-pink);
+      border: 2px solid var(--pink);
+      margin-left: 10px;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 7px 16px rgba(111, 75, 62, 0.15);
+    }
+
+    section {
+      padding: 60px 20px;
+    }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 38px;
+    }
+
+    .section-title h2 {
+      font-size: 30px;
+      color: var(--brown);
+      margin-bottom: 8px;
+    }
+
+    .section-title p {
+      color: #806d65;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    .alt-bg {
+      background: var(--soft-cream);
+    }
+
+    .features-grid,
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+    }
+
+    .feature-card,
+    .product-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      transition: 0.2s ease;
+    }
+
+    .feature-card {
+      padding: 25px 20px;
+      text-align: center;
+    }
+
+    .feature-card:hover,
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(111, 75, 62, 0.10);
+    }
+
+    .feature-icon {
+      width: 78px;
+      height: 78px;
+      margin: 0 auto 15px;
+      border-radius: 50%;
+      background: #fff0f5;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+
+    .feature-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .feature-card h3 {
+      color: var(--brown);
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    .feature-card p {
+      color: #806d65;
+      font-size: 14.5px;
+    }
+
+    .product-image {
+      height: 250px;
+      padding: 10px;
+      background: #fffaf6;
+      display: grid;
+      place-items: center;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 14px;
+    }
+
+    .product-body {
+      padding: 20px;
+    }
+
+    .product-body h3 {
+      color: var(--brown);
+      margin-bottom: 6px;
+    }
+
+    .product-body p {
+      color: #806d65;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .price {
+      color: var(--dark-pink);
+      font-size: 19px;
+      font-weight: 800;
+      margin-bottom: 13px;
+    }
+
+    .stats-bar {
+      background: var(--pink);
+      color: var(--white);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 20px;
+      text-align: center;
+      padding: 42px 20px;
+    }
+
+    .stat h3 {
+      font-size: 32px;
+    }
+
+    .stat p {
+      font-size: 14px;
+    }
+
+    .about-box {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 35px;
+    }
+
+    .about-box p {
+      color: #806d65;
+      margin-bottom: 18px;
+    }
+
+    footer {
+      background: var(--brown);
+      color: #f9eee8;
+      padding: 40px 20px 20px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+    }
+
+    .footer-inner h4 {
+      color: #ffd6df;
+      margin-bottom: 12px;
+    }
+
+    .footer-inner ul li {
+      margin-bottom: 7px;
+      font-size: 14px;
+    }
+
+    .footer-inner ul li a:hover {
+      color: #ffd6df;
+    }
+
+    .image-credit {
+      margin: 22px auto;
+      text-align: center;
+      font-size: 12px;
+      color: #e3ccc2;
+    }
+
+    .image-credit a {
+      color: #ffd6df;
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.18);
+      padding-top: 18px;
+      text-align: center;
+      font-size: 13px;
+      color: #e3ccc2;
+    }
+
+    @media (max-width: 780px) {
+
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: var(--cream);
+        flex-direction: column;
+        padding: 12px 20px 20px;
+        display: none;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .hero {
+        padding: 55px 20px;
+      }
+
+      .hero-inner {
+        gap: 35px;
+      }
+
+      .hero-text h1 {
+        font-size: 36px;
+      }
+
+      .hero-doll {
+        min-height: 300px;
+      }
+
+      .btn-outline {
+        margin-left: 0;
+        margin-top: 10px;
+      }
+
+      .logo-text {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header>
+    <nav class="navbar">
+
+      <a href="#home" class="logo">
+        <div class="logo-mark">
+          <img
+            src="https://www.monchhichi.co.jp/files/item/sekiguchi/SFDS/231005_032.jpg"
+            alt="Monchhichi doll logo"
+          />
+        </div>
+
+        <span class="logo-text">
+          MONCHHICHI <span>DOLL SHOP</span>
+        </span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+    </nav>
+  </header>
+
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+
+      <div class="hero-text">
+
+        <div class="eyebrow">
+          Cute • Cozy • Collectible
+        </div>
+
+        <h1>
+          Welcome to
+          <span>Monchhichi</span>
+          Doll Shop
+        </h1>
+
+        <p>
+          Discover adorable Monchhichi dolls and sweet little friends
+          for collectors, gifts, and anyone who loves cute toys.
+        </p>
+
+        <a href="#products" class="btn btn-primary">
+          Shop Our Dolls
+        </a>
+
+        <a href="#about" class="btn btn-outline">
+          About Our Shop
+        </a>
+
+      </div>
+
+
+      <div class="hero-image">
+
+        <div class="hero-doll" aria-label="Monchhichi dolls">
+          <img
+            class="hero-photo"
+            src="https://www.monchhichi.co.jp/files/item/sekiguchi/SFDS/23.10.06_underbar_sekiguchi_0115.jpg"
+            alt="Monchhichi dolls pair"
+          />
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= FEATURES ================= -->
+  <section>
+    <div class="section-inner">
+
+      <div class="section-title">
+        <h2>Why You'll Love Our Shop</h2>
+
+        <p>
+          A cozy little shop for Monchhichi lovers, collectors,
+          and anyone looking for a special cute companion.
+        </p>
+      </div>
+
+
+      <div class="features-grid">
+
+        <div class="feature-card">
+
+          <div class="feature-icon">
+            <img
+              src="https://www.monchhichi.co.jp/files/news/news2/NEWitem/sweetsuger/205905-1.jpg"
+              alt="Monchhichi doll"
+            />
+          </div>
+
+          <h3>Lovely Dolls</h3>
+
+          <p>
+            Carefully selected Monchhichi dolls in adorable
+            styles and sizes.
+          </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+          <div class="feature-icon">
+            <img
+              src="https://www.monchhichi.co.jp/files/item/sekiguchi/SFDS/231005_032.jpg"
+              alt="Monchhichi doll"
+            />
+          </div>
+
+          <h3>Cute Collections</h3>
+
+          <p>
+            Find sweet outfits and charming designs made for collectors.
+          </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+          <div class="feature-icon">
+            <img
+              src="https://www.monchhichi.co.jp/files/page/lovehappyangel/item-a.jpg?T=37yhdrue"
+              alt="Monchhichi angel dolls"
+            />
+          </div>
+
+          <h3>Perfect Gifts</h3>
+
+          <p>
+            A cute gift idea for birthdays, special occasions,
+            or yourself.
+          </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+          <div class="feature-icon">
+            <img
+              src="https://www.monchhichi.co.jp/files/item/sekiguchi/SFDS/23.10.06_underbar_sekiguchi_0115.jpg"
+              alt="Monchhichi dolls"
+            />
+          </div>
+
+          <h3>Made With Love</h3>
+
+          <p>
+            We want every customer to find a Monchhichi
+            that makes them smile.
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================= STATS ================= -->
+  <section class="stats-bar">
+
+    <div class="stat">
+      <h3>50+</h3>
+      <p>Cute Doll Styles</p>
+    </div>
+
+    <div class="stat">
+      <h3>100+</h3>
+      <p>Happy Customers</p>
+    </div>
+
+    <div class="stat">
+      <h3>20+</h3>
+      <p>Special Collections</p>
+    </div>
+
+    <div class="stat">
+      <h3>100%</h3>
+      <p>Love for Monchhichi</p>
+    </div>
+
+  </section>
+
+
+  <!-- ================= PRODUCTS ================= -->
+  <section class="alt-bg" id="products">
+
+    <div class="section-inner">
+
+      <div class="section-title">
+
+        <h2>
+          Our Favorite Monchhichi Dolls
+        </h2>
+
+        <p>
+          Take a look at some of the adorable dolls
+          available at our shop.
+        </p>
+
+      </div>
+
+
+      <div class="products-grid">
+
+
+        <div class="product-card">
+
+          <div class="product-image">
+            <img
+              src="https://www.monchhichi.co.jp/files/item/sekiguchi/SFDS/231005_032.jpg"
+              alt="Classic Monchhichi"
+            />
+          </div>
+
+          <div class="product-body">
+
+            <h3>Classic Monchhichi</h3>
+
+            <p>
+              Our sweet classic-style Monchhichi
+              for everyday cuddles.
+            </p>
+
+            <div class="price">
+              ฿890
+            </div>
+
+            <a href="#contact" class="btn btn-primary">
+              View Details
+            </a>
+
+          </div>
+        </div>
+
+
+        <div class="product-card">
+
+          <div class="product-image">
+            <img
+              src="https://www.monchhichi.co.jp/files/news/news2/NEWitem/sweetsuger/205905-1.jpg"
+              alt="Pink style Monchhichi"
+            />
+          </div>
+
+          <div class="product-body">
+
+            <h3>Pink Ribbon Monchhichi</h3>
+
+            <p>
+              A lovely pink outfit with an
+              extra cute ribbon detail.
+            </p>
+
+            <div class="price">
+              ฿990
+            </div>
+
+            <a href="#contact" class="btn btn-primary">
+              View Details
+            </a>
+
+          </div>
+        </div>
+
+
+        <div class="product-card">
+
+          <div class="product-image">
+            <img
+              src="https://www.monchhichi.co.jp/files/news/news2/NEWitem/sweetsuger/205929-1.jpg"
+              alt="Sweet Monchhichi"
+            />
+          </div>
+
+          <div class="product-body">
+
+            <h3>Sweet Sakura Monchhichi</h3>
+
+            <p>
+              A soft and charming design
+              inspired by spring flowers.
+            </p>
+
+            <div class="price">
+              ฿1,090
+            </div>
+
+            <a href="#contact" class="btn btn-primary">
+              View Details
+            </a>
+
+          </div>
+        </div>
+
+
+        <div class="product-card">
+
+          <div class="product-image">
+            <img
+              src="https://www.monchhichi.co.jp/files/page/lovehappyangel/item-a.jpg?T=37yhdrue"
+              alt="Monchhichi angel dolls"
+            />
+          </div>
+
+          <div class="product-body">
+
+            <h3>Monchhichi Couple</h3>
+
+            <p>
+              A cute pair for collectors
+              who love matching friends.
+            </p>
+
+            <div class="price">
+              ฿1,790
+            </div>
+
+            <a href="#contact" class="btn btn-primary">
+              View Details
+            </a>
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================= ABOUT ================= -->
+  <section id="about">
+
+    <div class="section-inner">
+
+      <div class="section-title">
+        <h2>About Monchhichi Doll Shop</h2>
+      </div>
+
+
+      <div class="about-box">
+
+        <p>
+          Monchhichi Doll Shop is a small and cozy online shop
+          created for people who love adorable Monchhichi dolls.
+        </p>
+
+        <p>
+          We believe that a cute little doll can bring happiness
+          to everyday life. Our goal is to make it easy for collectors
+          and Monchhichi fans to discover a doll that feels special.
+        </p>
+
+        <a href="#contact" class="btn btn-primary">
+          Contact Our Shop
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= GALLERY ================= -->
+  <section class="alt-bg" id="gallery">
+
+    <div class="section-inner">
+
+      <div class="section-title">
+
+        <h2>Monchhichi Gallery</h2>
+
+        <p>
+          Sweet little moments from our cute doll collection.
+        </p>
+
+      </div>
+
+
+      <div class="products-grid">
+
+
+        <div class="product-card">
+
+          <div class="product-image">
+            <img
+              src="https://www.monchhichi.co.jp/files/item/sekiguchi/SFDS/23.10.06_underbar_sekiguchi_0115.jpg"
+              alt="Monchhichi dolls together"
+            />
+          </div>
+
+          <div class="product-body">
+
+            <h3>Sweet Friend</h3>
+
+            <p>
+              A soft and cheerful Monchhichi moment.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="product-card">
+
+          <div class="product-image">
+            <img
+              src="https://www.monchhichi.co.jp/files/news/news2/NEWitem/sweetsuger/205929-1.jpg"
+              alt="Monchhichi sweet style"
+            />
+          </div>
+
+          <div class="product-body">
+
+            <h3>Pink Style</h3>
+
+            <p>
+              A lovely look for every Monchhichi fan.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="product-card">
+
+          <div class="product-image">
+            <img
+              src="https://www.monchhichi.co.jp/files/news/news2/NEWitem/sweetloripop/226856.jpg"
+              alt="Monchhichi sweet lollipop style"
+            />
+          </div>
+
+          <div class="product-body">
+
+            <h3>Flower Day</h3>
+
+            <p>
+              A cute collection inspired by soft flowers.
+            </p>
+
+          </div>
+
+        </div>
+
+
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- ================= CONTACT ================= -->
+  <section id="contact">
+
+    <div class="section-inner">
+
+      <div class="section-title">
+
+        <h2>Contact Us</h2>
+
+        <p>
+          Have a question about our dolls?
+          We'd love to hear from you.
+        </p>
+
+      </div>
+
+
+      <div class="about-box">
+
+        <p>
+          <strong>Phone:</strong>
+          089-123-4567
+        </p>
+
+        <p>
+          <strong>Email:</strong>
+          hello@monchhichidollshop.com
+        </p>
+
+        <p>
+          <strong>Instagram:</strong>
+          @monchhichidollshop
+        </p>
+
+        <a
+          href="mailto:hello@monchhichidollshop.com"
+          class="btn btn-primary"
+        >
+          Email Us
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+
+    <div class="footer-inner">
+
+
+      <div>
+
+        <h4>
+          Monchhichi Doll Shop
+        </h4>
+
+        <p>
+          A cozy little shop for adorable Monchhichi dolls,
+          collectors, and cute-toy lovers.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Quick Links
+        </h4>
+
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Contact
+        </h4>
+
+        <ul>
+          <li>Phone: 099-123-4567</li>
+          <li>Email: hello@monchhichidollshop.com</li>
+          <li>Instagram: @monchhichidollshop</li>
+        </ul>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="image-credit">
+
+      ·
+
+      <a
+        href="https://www.monchhichi.co.jp/"
+        target="_blank"
+        rel="noopener"
+      >
+       
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      &copy;
+
+      <span id="year"></span>
+
+      Monchhichi Doll Shop.
+      All rights reserved.
+
+    </div>
+
+  </footer>
+
+
+  <!-- ================= JAVASCRIPT ================= -->
+  <script>
+
+    // เปิด/ปิดเมนูบนมือถือ
+    const menuToggle =
+      document.getElementById("menuToggle");
+
+    const navLinks =
+      document.getElementById("navLinks");
+
+
+    if (menuToggle && navLinks) {
+
+      menuToggle.addEventListener(
+        "click",
+        function () {
+
+          navLinks.classList.toggle("show");
+
+        }
+      );
+
+    }
+
+
+    // ปิดเมนูเมื่อคลิกลิงก์
+    const navItems =
+      document.querySelectorAll(".nav-links a");
+
+    navItems.forEach(function (item) {
+
+      item.addEventListener(
+        "click",
+        function () {
+
+          navLinks.classList.remove("show");
+
+        }
+      );
+
+    });
+
+
+    // เปลี่ยนปีอัตโนมัติ
+    const yearSpan =
+      document.getElementById("year");
+
+    if (yearSpan) {
+
+      const currentYear =
+        new Date().getFullYear();
+
+      yearSpan.textContent =
+        currentYear;
+
+    }
+
+
+    // เปลี่ยน active menu ตาม section
+    const sections =
+      document.querySelectorAll("section[id]");
+
+    window.addEventListener(
+      "scroll",
+      function () {
+
+        let current = "";
+
+        sections.forEach(function (section) {
+
+          const sectionTop =
+            section.offsetTop - 120;
+
+          if (window.scrollY >= sectionTop) {
+
+            current =
+              section.getAttribute("id");
+
+          }
+
+        });
+
+
+        navItems.forEach(function (item) {
+
+          item.classList.remove("active");
+
+          if (
+            item.getAttribute("href") ===
+            "#" + current
+          ) {
+
+            item.classList.add("active");
+
+          }
+
+        });
+
+      }
+    );
+
+  </script>
+
+</body>
+</html>
